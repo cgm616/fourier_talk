@@ -40,13 +40,13 @@ mathbox
     .array({
         id: 'audioTime',
         data: [],
-        width: 1024,
+        width: 2048,
         channels: 1
     })
     .array({
         id: 'audioFreq',
         data: [],
-        width: 512,
+        width: 1024,
         channels: 1,
     }).end();
 
@@ -284,7 +284,7 @@ var setup_audio = function () {
         analyser.minDecibels = -90;
         analyser.maxDecibels = -10;
         analyser.smoothingTimeConstant = 0.85;
-        analyser.fftSize = 1024;
+        analyser.fftSize = 2048;
 
         var scratchTime = new Float32Array(analyser.fftSize);
 
