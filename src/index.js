@@ -143,7 +143,7 @@ var sine = opening.slide({ steps: 1, late: 1 })
     .line({ width: 2, color: 0x000000, zIndex: 2 })
     .end().end()
 
-var circle = sine.slide()
+var circle = sine.slide({ late: 1 })
     .reveal({ duration: 1, delay: 0.5 })
     .cartesian({
         position: [-9 / 5, 0, 0],
@@ -211,6 +211,48 @@ var circle = sine.slide()
         start: true,
         zIndex: 2
     })
+    .end()
+    .slide()
+    .cartesian({
+        position: [-9 / 5, 0, 0],
+        range: [[-1.2, 1.2], [-1.2, 1.2], [-1, 1]],
+        scale: [1, 1, 1]
+    })
+    .interval({
+        width: 1,
+        expr: function (emit, x, i, t) {
+            emit(0, Math.sin(2 * t - Math.PI));
+            emit(Math.cos(2 * t - Math.PI), Math.sin(2 * t - Math.PI));
+        },
+        items: 2,
+        channels: 2,
+    })
+    .vector({
+        color: 0xDD3333,
+        start: false,
+        zIndex: 2
+    })
+    .end()
+    .cartesian({
+        range: [[-1 * Math.PI, Math.PI], [-1.2, 1.2], [-1, 1]],
+        position: [6 / 5, 0, 0],
+        scale: [9 / (2 * Math.PI), 1, 1]
+    })
+    .interval({
+        width: 1,
+        expr: function (emit, x, i, t) {
+            emit(-1 * Math.PI / 2, Math.cos(2 * t - Math.PI));
+            emit(-1 * Math.PI / 2, 0);
+        },
+        items: 2,
+        channels: 2,
+    })
+    .vector({
+        color: 0xDD3333,
+        start: true,
+        zIndex: 2
+    })
+    .end()
     .end();
 
 
