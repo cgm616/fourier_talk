@@ -1,0 +1,30 @@
+{
+  "name": "fourier_talk",
+  "version": "1.0.0",
+  "description": "A talk on Fourier series for the Amherst College Math Club.",
+  "main": "index.js",
+  "author": "cgm616 (Cole Graber-Mitchell)",
+  "license": "MIT",
+  "dependencies": {
+    "@types/three": "^0.103.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mathbox": "^0.1.0",
+    "three": "^0.109.0",
+    "three-orbitcontrols": "^2.108.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server -d --content-base dist/ --inline --open",
+    "build": "webpack --mode production"
+  }
+}
